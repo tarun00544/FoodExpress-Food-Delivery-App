@@ -36,7 +36,7 @@
             <span class="badge badge-cart" id="cartCount">0</span>
           </button>
           <button class="btn btn-warning">
-            <i class="fas fa-user me-2"></i> <a href="https://tarun00544.github.io/Loginpage/">Login</a>
+            <i class="fas fa-user me-2"></i> <a href="https://loginpage-web-wine.vercel.app/">Login</a>
           </button>
         </div>
       </div>
@@ -101,8 +101,8 @@
         <button class="btn filter-btn active" onclick="filterMenu('all')">All Items</button>
         <button class="btn filter-btn" onclick="filterMenu('pizza')">Pizza</button>
         <button class="btn filter-btn" onclick="filterMenu('burger')">Burgers</button>
-        <button class="btn filter-btn" onclick="filterMenu('pasta')">Pasta & Noodles</button>
-        <button class="btn filter-btn" onclick="filterMenu('dessert')">Desserts & Momos</button>
+        <button class="btn filter-btn" onclick="filterMenu('pasta')">Snacks</button>
+        <button class="btn filter-btn" onclick="filterMenu('dessert')">Desserts</button>
         <button class="btn filter-btn" onclick="filterMenu('beverage')">Beverages</button>
       </div>
 
@@ -194,15 +194,17 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div>
                   <span class="original-price">₹169</span>
-                  <span class="price">₹149</span>
+                  <span class="price">₹139</span>
                 </div>
-                <button class="btn btn-add-cart text-white" onclick="addToCart('Veggie Deluxe Burger', 149, 'https://source.unsplash.com/100x100/?veggie,burger')">
+                <button class="btn btn-add-cart text-white" onclick="addToCart('Veggie Deluxe Burger', 139, 'https://source.unsplash.com/100x100/?veggie,burger')">
                   <i class="fas fa-plus me-1"></i>Add
                 </button>
               </div>
             </div>
           </div>
         </div> 
+
+        
         
 
         <!-- Pasta Items --> 
@@ -219,9 +221,9 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div>
                   <span class="original-price">₹299</span>
-                  <span class="price">₹269</span>
+                  <span class="price">₹249</span>
                 </div>
-                <button class="btn btn-add-cart text-white" onclick="addToCart('Creamy Alfredo Pasta', 269, 'https://source.unsplash.com/100x100/?alfredo,pasta')">
+                <button class="btn btn-add-cart text-white" onclick="addToCart('Creamy Alfredo Pasta', 249, 'https://source.unsplash.com/100x100/?alfredo,pasta')">
                   <i class="fas fa-plus me-1"></i>Add
                 </button>
               </div>
@@ -242,44 +244,17 @@
                   <div class="d-flex justify-content-between align-items-center">
                     <div>
                       <span class="original-price">₹199</span>
-                      <span class="price">₹179</span>
+                      <span class="price">₹149</span>
                     </div>
-                    <button class="btn btn-add-cart text-white" onclick="addToCart('Noodles', 179, 'https://blog.themalamarket.com/wp-content/uploads/2024/06/Vegetarian-pulled-noodles-lead-more-sat.jpg')">
+                    <button class="btn btn-add-cart text-white" onclick="addToCart('Noodles', 149, 'https://blog.themalamarket.com/wp-content/uploads/2024/06/Vegetarian-pulled-noodles-lead-more-sat.jpg')">
                       <i class="fas fa-plus me-1"></i>Add
                     </button>
                   </div>
                 </div>
               </div>
             </div>
-         </header>
 
-        <!-- Dessert Items -->
-          
-        <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="dessert">
-          <div class="card h-100">
-            <img src="https://img.taste.com.au/VcIM3Yg7/taste/2016/11/rich-chocolate-fudge-cake-81996-1.jpeg" class="card-img-top" alt="Chocolate Cake">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Chocolate Fudge Cake</h5>
-              <div class="rating mb-2">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                <small class="text-muted">(4.9)</small>
-              </div>
-              <p class="card-text flex-grow-1">Rich chocolate cake with fudge frosting</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div>
-                  <span class="original-price">₹199</span>
-                  <span class="price">₹159</span>
-                </div>
-                <button class="btn btn-add-cart text-white" onclick="addToCart('Chocolate Fudge Cake', 159, 'https://source.unsplash.com/100x100/?chocolate,cake')">
-                  <i class="fas fa-plus me-1"></i>Add
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-
-         <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="dessert">
+                  <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="pasta">
             <div class="card h-100">
               <img src="https://newhongkong.in/wp-content/uploads/2020/12/Easy-Steamed-Vegetable-Dumplings.jpeg" class="card-img-top" alt="Veg momos">
               <div class="card-body d-flex flex-column">
@@ -292,9 +267,9 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div>
                     <span class="original-price">₹149</span>
-                    <span class="price">₹129</span>
+                    <span class="price">₹119</span>
                   </div>
-                  <button class="btn btn-add-cart text-white" onclick="addToCart('Mango Smoothie', 129, 'https://www.indianhealthyrecipes.com/wp-content/uploads/2022/04/mango-smoothie-recipe.jpg')">
+                  <button class="btn btn-add-cart text-white" onclick="addToCart('Mango Smoothie', 119, 'https://www.indianhealthyrecipes.com/wp-content/uploads/2022/04/mango-smoothie-recipe.jpg')">
                     <i class="fas fa-plus me-1"></i>Add
                   </button>
                 </div>
@@ -302,7 +277,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="dessert">
+          <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="pasta">
             <div class="card h-100">
               <img src=" https://5.imimg.com/data5/ANDROID/Default/2021/11/YM/BN/FF/40307377/product-jpeg.jpg" class="card-img-top" alt="Mango Smoothie">
               <div class="card-body d-flex flex-column">
@@ -314,7 +289,7 @@
                 <p class="card-text flex-grow-1">Delicious non-veg dumplings</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div>
-                    <span class="original-price">₹169</span>
+                    <span class="original-price">₹199</span>
                     <span class="price">₹149</span>
                   </div>
                   <button class="btn btn-add-cart text-white" onclick="addToCart('Non-veg momos', 129, 'https://www.indianhealthyrecipes.com/wp-content/uploads/2022/04/mango-smoothie-recipe.jpg')">
@@ -324,7 +299,193 @@
               </div>
             </div>
             </div>
-         
+
+            <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="pasta">
+              <div class="card h-100">
+                <img src="https://redhousespice.com/wp-content/uploads/2021/12/whole-spring-rolls-and-halved-ones-scaled.jpg" class="card-img-top" alt="Mango Smoothie">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">spring rolls</h5>
+                  <div class="rating mb-2">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    <small class="text-muted">(4.5)</small>
+                  </div>
+                  <p class="card-text flex-grow-1">Crispy and delicious spring rolls</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                      <span class="original-price">₹199</span>
+                      <span class="price">₹149</span>
+                    </div>
+                    <button class="btn btn-add-cart text-white" onclick="addToCart('spring rolls', 149, 'https://www.indianhealthyrecipes.com/wp-content/uploads/2021/11/spring-rolls-recipe.jpg')">
+                      <i class="fas fa-plus me-1"></i>Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="pasta">
+              <div class="card h-100">
+                <img src=" https://www.awesomecuisine.com/wp-content/uploads/2018/07/cabbage_manchurian_dry.jpg" class="card-img-top" alt="Mango Smoothie">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Veg Manchurian</h5>
+                  <div class="rating mb-2">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    <small class="text-muted">(4.5)</small>
+                  </div>
+                  <p class="card-text flex-grow-1">Spicy and tangy Veg Manchurian</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                      <span class="original-price">₹299</span>
+                      <span class="price">₹249</span>
+                    </div>
+                    <button class="btn btn-add-cart text-white" onclick="addToCart('Veg Manchurian', 249, 'https://www.indianhealthyrecipes.com/wp-content/uploads/2021/11/veg-manchurian-recipe.jpg')">
+                      <i class="fas fa-plus me-1"></i>Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+             <!-- Dessert Items -->
+            
+        <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="dessert">
+          <div class="card h-100">
+            <img src="https://img.taste.com.au/VcIM3Yg7/taste/2016/11/rich-chocolate-fudge-cake-81996-1.jpeg" class="card-img-top" alt="Chocolate Cake">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Chocolate Fudge Cake</h5>
+              <div class="rating mb-2">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <small class="text-muted">(4.9)</small>
+              </div>
+              <p class="card-text flex-grow-1">Rich chocolate cake with fudge frosting</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="original-price">₹599</span>
+                  <span class="price">₹499</span>
+                </div>
+                <button class="btn btn-add-cart text-white" onclick="addToCart('Chocolate Fudge Cake', 499, 'https://source.unsplash.com/100x100/?chocolate,cake')">
+                  <i class="fas fa-plus me-1"></i>Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    
+        <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="dessert">
+          <div class="card h-100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmoMj74C2e5v3q-zRoGhqf-W2gCiKsktQlKA&s" class="card-img-top" alt="Rasmalai">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Ice-Cream</h5>
+              <div class="rating mb-2">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                <small class="text-muted">(4.3)</small>
+              </div>
+              <p class="card-text flex-grow-1">Creamy and delicious ice-cream</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="original-price">₹199</span>
+                  <span class="price">₹139</span>
+                </div>
+                <button class="btn btn-add-cart text-white" onclick="addToCart('Ice-Cream', 139, 'https://www.cubesnjuliennes.com/wp-content/uploads/2020/05/rasmalai-recipe.jpg')">
+                  <i class="fas fa-plus me-1"></i>Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="dessert">
+                <div class="card h-100">
+                  <img src="https://prashantcorner.com/cdn/shop/files/RasmalaiSR-1.png?v=1720595089" class="card-img-top" alt="Rasmalai">
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Rasmalai</h5>
+                    <div class="rating mb-2">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                      <small class="text-muted">(4.5)</small>
+                    </div>
+                    <p class="card-text flex-grow-1">Soft and spongy rasmalai soaked in sweet milk</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <span class="original-price">₹299</span>
+                        <span class="price">₹249</span>
+                      </div>
+                      <button class="btn btn-add-cart text-white" onclick="addToCart('Rasmalai', 249, 'https://www.cubesnjuliennes.com/wp-content/uploads/2020/05/rasmalai-recipe.jpg')">
+                        <i class="fas fa-plus me-1"></i>Add
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="dessert">
+                <div class="card h-100">
+                  <img src=" https://madhurasrecipe.com/wp-content/uploads/2023/10/Rasgulla-Featured-Image.jpg" class="card-img-top" alt="Rasgulla">
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Rasgulla</h5>
+                    <div class="rating mb-2">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                      <small class="text-muted">(4.5)</small>
+                    </div>
+                    <p class="card-text flex-grow-1">Soft and spongy rasgulla soaked in sweet syrup</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <span class="original-price">₹399</span>
+                        <span class="price">₹279</span>
+                      </div>
+                      <button class="btn btn-add-cart text-white" onclick="addToCart('Rasgulla', 279, 'https://www.cubesnjuliennes.com/wp-content/uploads/2020/05/rasgulla-recipe.jpg')">
+                        <i class="fas fa-plus me-1"></i>Add
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="dessert">
+                <div class="card h-100">
+                  <img src="https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480_1_5x/img/recipe/ras/Assets/B6821ADB-CB37-47B2-8091-C61A43487506/Derivates/35e35439-6bf2-4840-9c46-971393239c29.jpg" class="card-img-top" alt="Mango Smoothie">
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Mango Smoothie</h5>
+                    <div class="rating mb-2">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                      <small class="text-muted">(4.5)</small>
+                    </div>
+                    <p class="card-text flex-grow-1">Creamy and delicious mango smoothie</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <span class="original-price">₹249</span>
+                        <span class="price">₹149</span>
+                      </div>
+                      <button class="btn btn-add-cart text-white" onclick="addToCart('Mango Smoothie', 149, 'https://www.indianhealthyrecipes.com/wp-content/uploads/2022/04/mango-smoothie-recipe.jpg')">
+                        <i class="fas fa-plus me-1"></i>Add
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="dessert">
+                <div class="card h-100">
+                  <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/11/gulab-jamun.webp" class="card-img-top" alt="Gulab Jamun">
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Gulab Jamun</h5>
+                    <div class="rating mb-2">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                      <small class="text-muted">(4.5)</small>
+                    </div>
+                    <p class="card-text flex-grow-1">Soft and spongy gulab jamun soaked in sugar syrup</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <span class="original-price">₹399</span>
+                        <span class="price">₹269</span>
+                      </div>
+                      <button class="btn btn-add-cart text-white" onclick="addToCart('Gulab Jamun', 269, 'https://www.cubesnjuliennes.com/wp-content/uploads/2020/05/gulab-jamun-recipe.jpg')">
+                        <i class="fas fa-plus me-1"></i>Add
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
         <!-- Beverage Items -->
           
@@ -340,10 +501,10 @@
               <p class="card-text flex-grow-1">Freshly squeezed orange juice</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div>
-                  <span class="original-price">₹89</span>
-                  <span class="price">₹59</span>
+                  <span class="original-price">₹99</span>
+                  <span class="price">₹49</span>
                 </div>
-                <button class="btn btn-add-cart text-white" onclick="addToCart('Fresh Orange Juice', 59, 'https://source.unsplash.com/100x100/?orange,juice')">
+                <button class="btn btn-add-cart text-white" onclick="addToCart('Fresh Orange Juice', 49, 'https://source.unsplash.com/100x100/?orange,juice')">
                   <i class="fas fa-plus me-1"></i>Add
                 </button>
               </div>
@@ -363,8 +524,8 @@
               <p class="card-text flex-grow-1">Freshly squeezed mix juice</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div>
-                  <span class="original-price">₹99</span>
-                  <span class="price">₹79</span>
+                  <span class="original-price">₹120</span>
+                  <span class="price">₹69</span>
                 </div>
                 <button class="btn btn-add-cart text-white" onclick="addToCart('Mix Juice', 69, 'https://d3cm4d6rq8ed33.cloudfront.net/media/navpravartakfiles/19/36041f6f-d1b9-4f35-a127-82376d9cd0d2.jpg')">
                   <i class="fas fa-plus me-1"></i>Add
@@ -387,18 +548,89 @@
                   <div class="d-flex justify-content-between align-items-center">
                     <div>
                       <span class="original-price">₹149</span>
-                      <span class="price">₹129</span>
+                      <span class="price">₹99</span>
                     </div>
-                    <button class="btn btn-add-cart text-white" onclick="addToCart('Cold Coffee', 129, 'https://www.indianhealthyrecipes.com/wp-content/uploads/2022/04/mango-smoothie-recipe.jpg')">
+                    <button class="btn btn-add-cart text-white" onclick="addToCart('Cold Coffee', 99, 'https://www.indianhealthyrecipes.com/wp-content/uploads/2022/04/mango-smoothie-recipe.jpg')">
                       <i class="fas fa-plus me-1"></i>Add
                     </button>
                   </div>
                 </div>
               </div>
             </div>
-      </div>
-    </div>
-      
+
+            <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="beverage">
+              <div class="card h-100">
+                <img src="https://www.munatycooking.com/wp-content/uploads/2024/04/Three-glasses-filled-with-karak-chai.jpg" class="card-img-top" alt="Mango Smoothie">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Tea</h5>
+                  <div class="rating mb-2">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    <small class="text-muted">(4.3)</small>
+                  </div>
+                  <p class="card-text flex-grow-1">Aromatic tea with a soothing flavor</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                      <span class="original-price">₹89</span>
+                      <span class="price">₹49</span>
+                    </div>
+                    <button class="btn btn-add-cart text-white" onclick="addToCart('Tea', 99, 'https://www.indianhealthyrecipes.com/wp-content/uploads/2022/04/mango-smoothie-recipe.jpg')">
+                      <i class="fas fa-plus me-1"></i>Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="beverage">
+              <div class="card h-100">
+                <img src="https://img.forestessentialsindia.com/blog/wp-content/uploads/2020/02/Green-tea.png" class="card-img-top" alt="Mango Smoothie">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Green Tea</h5>
+                  <div class="rating mb-2">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    <small class="text-muted">(4.3)</small>
+                  </div>
+                  <p class="card-text flex-grow-1">Strong and bold green tea</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                      <span class="original-price">₹89</span>
+                      <span class="price">₹49</span>
+                    </div>
+                    <button class="btn btn-add-cart text-white" onclick="addToCart('Black Tea', 49, 'https://www.cubesnjuliennes.com/wp-content/uploads/2020/05/masala-chai-recipe.jpg')">
+                      <i class="fas fa-plus me-1"></i>Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="beverage">
+              <div class="card h-100">
+                <img src="https://images.ctfassets.net/e8bhhtr91vp3/4v9X0NPdU6zsq1UwHXfYpV/01f6e8e5099ed9a7a9d7bf336d76b1fd/image.png?w=1600&q=60" class="card-img-top" alt="Mango Smoothie">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Black Tea</h5>
+                  <div class="rating mb-2">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    <small class="text-muted">(4.3)</small>
+                  </div>
+                  <p class="card-text flex-grow-1">Strong and bold black tea</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                      <span class="original-price">₹89</span>
+                      <span class="price">₹49</span>
+                    </div>
+                    <button class="btn btn-add-cart text-white" onclick="addToCart('Black Tea', 49, 'https://www.cubesnjuliennes.com/wp-content/uploads/2020/05/masala-chai-recipe.jpg')">
+                      <i class="fas fa-plus me-1"></i>Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="beverage">
+              <div class="card h-100">
+                <img src="https://www.cubesnjuliennes.com/wp-content/uploads/2020/05/masala-chai-recipe.jpg" class="card-img-top" alt="Mango Smoothie">
+                <div class="card-body d-flex flex-column">
   </section>
   
 
