@@ -1,0 +1,518 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodExpress - Order Your Favorite Food</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+   <link rel="stylesheet" href="food.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="food.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
+    <div class="container">
+         
+      <a class="navbar-brand fw-bold" href="#">
+        <i class="fas fa-utensils me-2"></i>FoodExpress
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="Dasboard.html">Dashboard</a></li>
+        </ul>
+        <div class="d-flex align-items-center">
+          <button class="btn btn-outline-light me-3" onclick="toggleCart()">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="badge badge-cart" id="cartCount">0</span>
+          </button>
+          <button class="btn btn-warning">
+            <i class="fas fa-user me-2"></i> <a href="https://tarun00544.github.io/Loginpage/">Login</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="home" class="hero-section text-center">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="display-3 fw-bold mb-4">Delicious Food Delivered Fast!</h1>
+          <p class="lead mb-4">Order from your favorite restaurants and get fresh, hot food delivered to your doorstep in 30 minutes or less.</p>
+          <div class="d-flex justify-content-center gap-3">
+            <a href="#menu" class="btn btn-light btn-lg px-4">
+              <i class="fas fa-pizza-slice me-2"></i>Order Now
+            </a>
+            <button class="btn btn-outline-light btn-lg px-4" data-bs-toggle="modal" data-bs-target="#promoModal">
+              <i class="fas fa-gift me-2"></i>View Offers
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img src=" https://img.freepik.com/premium-vector/food-delivery-service-fast-food-delivery-scooter-delivery-service-illustration_67394-869.jpg" class="img-fluid rounded shadow" alt="Food Delivery" >
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section id="features" class="delivery-info">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-4 mb-4">
+          <i class="fas fa-clock feature-icon"></i>
+          <h4>30 Min Delivery</h4>
+          <p class="text-muted">Lightning fast delivery to your doorstep</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <i class="fas fa-shield-alt feature-icon"></i>
+          <h4>Safe & Hygienic</h4>
+          <p class="text-muted">Contactless delivery with safety protocols</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <i class="fas fa-star feature-icon"></i>
+          <h4>Quality Food</h4>
+          <p class="text-muted">Fresh ingredients from trusted restaurants</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Food Menu Section -->
+  <section id="menu" class="food-category">
+    <div class="container">
+      <h2 class="text-center mb-5">Our Menu</h2>
+      
+      <!-- Category Filters -->
+              
+      <div class="category-filter text-center">
+
+        <button class="btn filter-btn active" onclick="filterMenu('all')">All Items</button>
+        <button class="btn filter-btn" onclick="filterMenu('pizza')">Pizza</button>
+        <button class="btn filter-btn" onclick="filterMenu('burger')">Burgers</button>
+        <button class="btn filter-btn" onclick="filterMenu('pasta & Noodles')">Pasta & Noodles</button>
+        <button class="btn filter-btn" onclick="filterMenu('dessert & momos')">Desserts & Momos</button>
+        <button class="btn filter-btn" onclick="filterMenu('beverage')">Beverages</button>
+      </div>
+
+      <div class="row" id="menuItems">
+
+        <!-- Pizza Items -->
+        <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="pizza">
+          <div class="card h-100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOu966OtyyOj-T02fw8WFGOUkO_z3-VT9Fjg&s" class="card-img-top" alt="Margherita Pizza">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Margherita Pizza</h5>
+              <div class="rating mb-2">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <small class="text-muted">(4.8)</small>
+              </div>
+              <p class="card-text flex-grow-1">Fresh tomatoes, mozzarella cheese, basil leaves</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="original-price">₹299</span>
+                  <span class="price">₹249</span>
+                </div>
+                <button class="btn btn-add-cart text-white" onclick="addToCart('Margherita Pizza', 249, 'https://source.unsplash.com/100x100/?margherita,pizza')">
+                  <i class="fas fa-plus me-1"></i>Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="pizza">
+          <div class="card h-100">
+            <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoYWUM5Lpw8wwHe5aK6e9R4o1OOwI4XRsPLg&s" class="card-img-top" alt="Pepperoni Pizza">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Pepperoni Pizza</h5>
+              <div class="rating mb-2">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                <small class="text-muted">(4.6)</small>
+              </div>
+              <p class="card-text flex-grow-1">Spicy pepperoni with mozzarella and tomato sauce</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="original-price">₹399</span>
+                  <span class="price">₹349</span>
+                </div>
+                <button class="btn btn-add-cart text-white" onclick="addToCart('Pepperoni Pizza', 349, 'https://source.unsplash.com/100x100/?pepperoni,pizza')">
+                  <i class="fas fa-plus me-1"></i>Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+
+        <!-- Burger Items -->
+         
+        <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="burger">
+          <div class="card h-100">
+            <img src=" https://www.indianhealthyrecipes.com/wp-content/uploads/2024/06/chicken-burger-recipe.jpg" class="card-img-top" alt="Chicken Burger">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Chicken Burger</h5>
+              <div class="rating mb-2">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <small class="text-muted">(4.9)</small>
+              </div>
+              <p class="card-text flex-grow-1">Grilled chicken patty with fresh vegetables</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="original-price">₹199</span>
+                  <span class="price">₹179</span>
+                </div>
+                <button class="btn btn-add-cart text-white" onclick="addToCart('Chicken Burger', 179, 'https://source.unsplash.com/100x100/?chicken,burger')">
+                  <i class="fas fa-plus me-1"></i>Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="burger">
+          <div class="card h-100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ22F59dLIhtWwhUPO542eA-PsX0fYGQj1Juw&s" class="card-img-top" alt="Veggie Burger">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Veggie Deluxe Burger</h5>
+              <div class="rating mb-2">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                <small class="text-muted">(4.2)</small>
+              </div>
+              <p class="card-text flex-grow-1">Plant-based patty with avocado and greens</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="original-price">₹169</span>
+                  <span class="price">₹149</span>
+                </div>
+                <button class="btn btn-add-cart text-white" onclick="addToCart('Veggie Deluxe Burger', 149, 'https://source.unsplash.com/100x100/?veggie,burger')">
+                  <i class="fas fa-plus me-1"></i>Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div> 
+        
+
+        <!-- Pasta Items --> 
+        <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="pasta">
+          <div class="card h-100">
+            <img src=" https://thefoodcharlatan.com/wp-content/uploads/2020/08/Homemade-Chicken-Fettuccine-Alfredo-10.jpg" class="card-img-top" alt="Alfredo Pasta">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Creamy Alfredo Pasta</h5>
+              <div class="rating mb-2">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                <small class="text-muted">(4.7)</small>
+              </div>
+              <p class="card-text flex-grow-1">Rich cream sauce with parmesan cheese</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="original-price">₹299</span>
+                  <span class="price">₹269</span>
+                </div>
+                <button class="btn btn-add-cart text-white" onclick="addToCart('Creamy Alfredo Pasta', 269, 'https://source.unsplash.com/100x100/?alfredo,pasta')">
+                  <i class="fas fa-plus me-1"></i>Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+            <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="beverage">
+              <div class="card h-100">
+                <img src="https://blog.themalamarket.com/wp-content/uploads/2024/06/Vegetarian-pulled-noodles-lead-more-sat.jpg" class="card-img-top" alt="Mango Smoothie">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Noodles</h5>
+                  <div class="rating mb-2">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    <small class="text-muted">(4.3)</small>
+                  </div>
+                  <p class="card-text flex-grow-1">Delicious vegetarian noodles</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                      <span class="original-price">₹199</span>
+                      <span class="price">₹179</span>
+                    </div>
+                    <button class="btn btn-add-cart text-white" onclick="addToCart('Noodles', 179, 'https://blog.themalamarket.com/wp-content/uploads/2024/06/Vegetarian-pulled-noodles-lead-more-sat.jpg')">
+                      <i class="fas fa-plus me-1"></i>Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+         </header>
+
+        <!-- Dessert Items -->
+          
+        <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="dessert">
+          <div class="card h-100">
+            <img src="https://img.taste.com.au/VcIM3Yg7/taste/2016/11/rich-chocolate-fudge-cake-81996-1.jpeg" class="card-img-top" alt="Chocolate Cake">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Chocolate Fudge Cake</h5>
+              <div class="rating mb-2">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <small class="text-muted">(4.9)</small>
+              </div>
+              <p class="card-text flex-grow-1">Rich chocolate cake with fudge frosting</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="original-price">₹199</span>
+                  <span class="price">₹159</span>
+                </div>
+                <button class="btn btn-add-cart text-white" onclick="addToCart('Chocolate Fudge Cake', 159, 'https://source.unsplash.com/100x100/?chocolate,cake')">
+                  <i class="fas fa-plus me-1"></i>Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+         <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="beverage">
+            <div class="card h-100">
+              <img src="https://newhongkong.in/wp-content/uploads/2020/12/Easy-Steamed-Vegetable-Dumplings.jpeg" class="card-img-top" alt="Veg momos">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Veg momos</h5>
+                <div class="rating mb-2">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                  <small class="text-muted">(4.3)</small>
+                </div>
+                <p class="card-text flex-grow-1">Delicious steamed dumplings</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <span class="original-price">₹149</span>
+                    <span class="price">₹129</span>
+                  </div>
+                  <button class="btn btn-add-cart text-white" onclick="addToCart('Mango Smoothie', 129, 'https://www.indianhealthyrecipes.com/wp-content/uploads/2022/04/mango-smoothie-recipe.jpg')">
+                    <i class="fas fa-plus me-1"></i>Add
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="beverage">
+            <div class="card h-100">
+              <img src=" https://5.imimg.com/data5/ANDROID/Default/2021/11/YM/BN/FF/40307377/product-jpeg.jpg" class="card-img-top" alt="Mango Smoothie">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Non-veg momos</h5>
+                <div class="rating mb-2">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                  <small class="text-muted">(4.3)</small>
+                </div>
+                <p class="card-text flex-grow-1">Delicious non-veg dumplings</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <span class="original-price">₹169</span>
+                    <span class="price">₹149</span>
+                  </div>
+                  <button class="btn btn-add-cart text-white" onclick="addToCart('Non-veg momos', 129, 'https://www.indianhealthyrecipes.com/wp-content/uploads/2022/04/mango-smoothie-recipe.jpg')">
+                    <i class="fas fa-plus me-1"></i>Add
+                  </button>
+                </div>
+              </div>
+            </div>
+            </div>
+         
+
+        <!-- Beverage Items -->
+          
+        <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="beverage">
+          <div class="card h-100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkDlj_8JhG_6hrg2stlttBR14Xr_dO3Wsifw&s" class="card-img-top" alt="Fresh Juice">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Fresh Orange Juice</h5>
+              <div class="rating mb-2">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                <small class="text-muted">(4.3)</small>
+              </div>
+              <p class="card-text flex-grow-1">Freshly squeezed orange juice</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="original-price">₹89</span>
+                  <span class="price">₹59</span>
+                </div>
+                <button class="btn btn-add-cart text-white" onclick="addToCart('Fresh Orange Juice', 59, 'https://source.unsplash.com/100x100/?orange,juice')">
+                  <i class="fas fa-plus me-1"></i>Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="beverage">
+          <div class="card h-100">
+            <img src=" https://d3cm4d6rq8ed33.cloudfront.net/media/navpravartakfiles/19/36041f6f-d1b9-4f35-a127-82376d9cd0d2.jpg" class="card-img-top" alt="Mix Juice">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Mix Juice</h5>
+              <div class="rating mb-2">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                <small class="text-muted">(4.3)</small>
+              </div>
+              <p class="card-text flex-grow-1">Freshly squeezed mix juice</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="original-price">₹99</span>
+                  <span class="price">₹79</span>
+                </div>
+                <button class="btn btn-add-cart text-white" onclick="addToCart('Mix Juice', 69, 'https://d3cm4d6rq8ed33.cloudfront.net/media/navpravartakfiles/19/36041f6f-d1b9-4f35-a127-82376d9cd0d2.jpg')">
+                  <i class="fas fa-plus me-1"></i>Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+            <div class="col-lg-4 col-md-6 mb-4 menu-item" data-category="beverage">
+              <div class="card h-100">
+                <img src=" https://www.mygingergarlickitchen.com/wp-content/rich-markup-images/1x1/1x1-cold-coffee-recipe.jpg" class="card-img-top" alt="Mango Smoothie" >
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Cold Coffee</h5>
+                  <div class="rating mb-2">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    <small class="text-muted">(4.3)</small>
+                  </div>
+                  <p class="card-text flex-grow-1">Chilled coffee with a rich flavor</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                      <span class="original-price">₹149</span>
+                      <span class="price">₹129</span>
+                    </div>
+                    <button class="btn btn-add-cart text-white" onclick="addToCart('Cold Coffee', 129, 'https://www.indianhealthyrecipes.com/wp-content/uploads/2022/04/mango-smoothie-recipe.jpg')">
+                      <i class="fas fa-plus me-1"></i>Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+    </div>
+      
+  </section>
+  
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay" onclick="toggleCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="p-4">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4><i class="fas fa-shopping-cart me-2"></i>Your Cart</h4>
+        <button class="btn btn-outline-secondary" onclick="toggleCart()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      
+      <div id="cartItems">
+        <div class="text-center py-5">
+          <i class="fas fa-shopping-cart fa-3x text-muted mb-3"></i>
+          <p class="text-muted">Your cart is empty</p>
+        </div>
+      </div>
+      
+      <div id="cartSummary" class="border-top pt-3" style="display: none;">
+        <div class="d-flex justify-content-between mb-2">
+          <span>Subtotal:</span>
+          <span id="subtotal">₹0</span>
+        </div>
+        <div class="d-flex justify-content-between mb-2">
+          <span>Delivery Fee:</span>
+          <span>₹29</span>
+        </div>
+        <div class="d-flex justify-content-between mb-3 fw-bold">
+          <span>Total:</span>
+          <span id="total">₹29</span>
+        </div>
+        <button class="btn btn-danger w-100 btn-lg" onclick="proceedToCheckout()">
+          <i class="fas fa-credit-card me-2"></i>Proceed to Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Promo Modal -->
+  <div class="modal fade" id="promoModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-warning">
+          <h5 class="modal-title"><i class="fas fa-gift me-2"></i>Special Offers</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="text-center mb-4">
+            <h4 class="text-danger">🎉 Limited Time Offers! 🎉</h4>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <div class="card border-danger">
+                <div class="card-body text-center">
+                  <h5 class="text-danger">FIRST50</h5>
+                  <p>50% off on first order<br><small class="text-muted">Min order ₹299</small></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card border-success">
+                <div class="card-body text-center">
+                  <h5 class="text-success">PIZZA30</h5>
+                  <p>30% off on all pizzas<br><small class="text-muted">Valid till midnight</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-dark text-white py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h5><i class="fas fa-utensils me-2"></i>FoodExpress</h5>
+          <p>Delivering happiness to your doorstep since 2020. Fast, fresh, and delicious food from your favorite restaurants.</p>
+          <div class="social-links">
+            <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h6>Quick Links</h6>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white-50">About Us</a></li>
+            <li><a href="#" class="text-white-50">Privacy Policy</a></li>
+            <li><a href="#" class="text-white-50">Terms & Conditions</a></li>
+            <li><a href="#" class="text-white-50">Refund Policy</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h6>Contact Info</h6>
+          <p class="text-white-50">
+            <i class="fas fa-map-marker-alt me-2"></i>123 Food Street, Amritsar, Punjab<br>
+            <i class="fas fa-phone me-2"></i>+91-8001105965<br>
+            <i class="fas fa-envelope me-2"></i>support@foodexpress.com
+          </p>
+        </div>
+      </div>
+      <hr class="my-4">
+      <div class="text-center">
+        <p class="mb-0">&copy; 2025 FoodExpress. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+   
