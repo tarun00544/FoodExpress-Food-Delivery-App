@@ -1,0 +1,531 @@
+   <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to my page</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: rgb(7, 20, 20);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        .bg-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="a"><stop offset="0" stop-color="%23fff" stop-opacity=".1"/><stop offset="1" stop-color="%23fff" stop-opacity="0"/></radialGradient></defs><circle cx="50" cy="50" r="50" fill="url(%23a)"/></svg>') repeat;
+            background-size: 100px 100px;
+            animation: float 20s infinite linear;
+            opacity: 0.1;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+
+        .Login-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 25px;
+            max-width: 420px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .Login-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.2);
+        }
+
+        .Login-wapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            gap: 40px;
+        }
+
+        .Welcome-message {
+            background: linear-gradient(135deg, #4f83cc 0%, #7b68ee 50%, #9b59b6 100%);
+            color: white;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+            overflow: hidden;
+            min-height: 500px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .Welcome-message::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .Welcome-message h2 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+            to { text-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+        }
+
+        .Welcome-message p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .Welcome-message h3 {
+            color: #e8f4fd;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .social-icon {
+            transition: all 0.3s ease;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        .login-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #4f83cc, #7b68ee);
+            border-radius: 2px;
+        }
+
+        .login-header h1 {
+            background: linear-gradient(135deg, #4f83cc, #7b68ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .Login-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .Login-form label {
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        .Login-form input {
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border: 2px solid #e1e8ed;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .Login-form input:focus {
+            outline: none;
+            border-color: #4f83cc;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(79, 131, 204, 0.15);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .checkbox-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 8px;
+            transform: scale(1.2);
+        }
+
+        button {
+            background: linear-gradient(135deg, #4f83cc 0%, #7b68ee 100%);
+            color: white;
+            width: 100%;
+            height: 50px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        button:hover::before {
+            left: 100%;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(79, 131, 204, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .signup-link {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e1e8ed;
+        }
+
+        a {
+            color: #4f83cc;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 5px;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #7b68ee;
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 15px;
+            text-align: center;
+            padding: 10px;
+            background: rgba(231, 76, 60, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(231, 76, 60, 0.2);
+        }
+
+        .loading {
+            background: linear-gradient(135deg, #95a5a6, #7f8c8d) !important;
+            cursor: not-allowed !important;
+            transform: none !important;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .Login-wapper {
+                flex-direction: column;
+                padding: 10px;
+                gap: 20px;
+            }
+            
+            .Welcome-message {
+                min-height: 300px;
+                padding: 40px 20px;
+            }
+            
+            .Welcome-message h2 {
+                font-size: 2rem;
+            }
+            
+            .Login-container {
+                width: 100%;
+                max-width: 400px;
+                padding: 30px 20px;
+            }
+        }
+
+        /* Success animation */
+        @keyframes success {
+            0% { background: linear-gradient(135deg, #4f83cc 0%, #7b68ee 100%); }
+            100% { background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); }
+        }
+
+        .success {
+            animation: success 0.5s ease forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-animation"></div>
+    
+    <div class="Login-wapper">
+        <div class="Welcome-message">
+            <h2>Welcome to Technical Players</h2>
+            <p>Your gateway to the world of technology.</p>
+            <h3>Connect with us on social media:</h3>
+            <a href="https://www.google.com/" class="social-icon"> 
+                <img src="https://images.unsplash.com/photo-1678483790096-26cc771a9dc2?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                     alt="Google" height="150" width="200">
+            </a>
+        </div>
+
+        <div class="Login-container">
+            <div class="login-header">
+                <h1>Technical Players</h1>
+                <br>
+                <h3>Login your account</h3>
+                <h5>Please enter your all details for sign in:</h5>
+            </div>
+
+            <form id="loginForm">
+                <div class="Login-form">
+                    <label for="Email">Email Address</label>
+                    <input type="email" id="Email" name="Email" required placeholder="Enter your email-id">
+
+                    <label for="Password">Password</label>
+                    <input type="password" name="Password" id="Password" required placeholder="Enter your Password">
+                </div>
+
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="remember" id="remember">
+                        Remember me
+                    </label>
+                    <a href="#" onclick="showForgotPassword()">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="login-btn" id="loginButton">
+                    Login
+                </button>
+                
+                <div id="errorMessage" class="error-message"></div>
+            </form>
+            
+            <div class="signup-link">
+                Don't have an account? <a href="Signup.html" onclick="showSignup()">Sign up here</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Valid credentials
+        const validCredentials = {
+            username: "tarunkumar894186@gmail.com",
+            password: "Tarun@1230"
+        };
+
+        // Portfolio URL
+        const portfolioURL = "https://tarun00544.github.io/Tarun-Portfolio/";
+
+        // Get form elements
+        const loginForm = document.getElementById('loginForm');
+        const emailInput = document.getElementById('Email');
+        const passwordInput = document.getElementById('Password');
+        const loginButton = document.getElementById('loginButton');
+        const errorMessage = document.getElementById('errorMessage');
+        const rememberCheckbox = document.getElementById('remember');
+
+        // Handle form submission
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const enteredEmail = emailInput.value.trim();
+            const enteredPassword = passwordInput.value;
+            
+            // Clear previous error messages
+            errorMessage.textContent = '';
+            errorMessage.style.display = 'none';
+            
+            // Show loading state
+            loginButton.textContent = 'Logging in...';
+            loginButton.classList.add('loading');
+            loginButton.disabled = true;
+            
+            // Simulate a brief loading delay for better UX
+            setTimeout(() => {
+                // Validate credentials
+                if (enteredEmail === validCredentials.username && enteredPassword === validCredentials.password) {
+                    // Success - store login state if remember me is checked
+                    if (rememberCheckbox.checked) {
+                        // Store login state (you might want to use more secure methods in production)
+                        sessionStorage.setItem('isLoggedIn', 'true');
+                        sessionStorage.setItem('userEmail', enteredEmail);
+                    }
+                    
+                    // Show success message
+                    loginButton.textContent = 'Success! Redirecting...';
+                    loginButton.classList.add('success');
+                    
+                    // Redirect to portfolio after a short delay
+                    setTimeout(() => {
+                        window.location.href = portfolioURL;
+                    }, 1000);
+                    
+                } else {
+                    // Failed login
+                    errorMessage.textContent = 'Invalid email or password. Please try again.';
+                    errorMessage.style.display = 'block';
+                    
+                    // Reset button state
+                    loginButton.textContent = 'Login';
+                    loginButton.classList.remove('loading');
+                    loginButton.disabled = false;
+                    
+                    // Clear password field for security
+                    passwordInput.value = '';
+                    passwordInput.focus();
+                    
+                    // Shake effect for visual feedback
+                    loginForm.style.animation = 'shake 0.5s';
+                    setTimeout(() => {
+                        loginForm.style.animation = '';
+                    }, 500);
+                }
+            }, 1000);
+        });
+
+        // Forgot password function
+        function showForgotPassword() {
+            alert('Please contact support at: tarunkumar894186@gmail.com');
+        }
+
+        // Sign up function
+        function showSignup() {
+            alert('Redirecting to sign up page...');
+            // You can redirect to actual signup page here
+            // window.location.href = 'Signup.html';
+        }
+
+        // Check if user is already logged in (if remember me was used)
+        window.addEventListener('load', function() {
+            if (sessionStorage.getItem('isLoggedIn') === 'true') {
+                const userEmail = sessionStorage.getItem('userEmail');
+                if (userEmail === validCredentials.username) {
+                    if (confirm('You are already logged in. Do you want to go to your portfolio?')) {
+                        window.location.href = portfolioURL;
+                    } else {
+                        sessionStorage.removeItem('isLoggedIn');
+                        sessionStorage.removeItem('userEmail');
+                    }
+                }
+            }
+        });
+
+        // Add shake animation keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+                20%, 40%, 60%, 80% { transform: translateX(5px); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add enter key support for better UX
+        emailInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                passwordInput.focus();
+            }
+        });
+
+        passwordInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                loginForm.dispatchEvent(new Event('submit'));
+            }
+        });
+
+        // Add input animation effects
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentNode.classList.add('focused');
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentNode.classList.remove('focused');
+            });
+        });
+    </script>
+</body>
+
+</html>
+
